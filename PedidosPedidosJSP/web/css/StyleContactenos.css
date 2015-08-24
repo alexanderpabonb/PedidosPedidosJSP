@@ -1,0 +1,41 @@
+/* 
+    Created on : 23-ago-2015, 20:15:18
+    Author     : Alex Pabón
+*/
+
+#Informacion
+{
+    width:530px;
+    height:380px;
+    float:left;
+    background-color:#efefef;
+    color:#000000;
+    text-align:left;
+    border-radius:20px;
+    padding:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+}
+
+#rutas{
+    width: 100px;
+    height: 160px;
+    text-align:center;
+    background-color:#efefef;
+    margin-top: -120px;
+    float: right;
+    margin-right: 20px;
+    border: 1px;
+}
+
+#MensajeContacto
+{
+    width:460px;
+    height:380px;
+    float:right;
+    background-color:#efefef;
+    color:#000000;
+    text-align:center;
+    border-radius:20px;
+    padding:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+}

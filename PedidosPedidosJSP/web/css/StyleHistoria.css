@@ -1,0 +1,17 @@
+/* 
+    Created on : 23-ago-2015, 20:54:06
+    Author     : Alex Pabón
+*/
+
+#Historia 
+{
+    width:1040px;
+    height:200px;
+    float:left;
+    background-color:#efefef;
+    color:#000000;
+    text-align:center;
+    border-radius:20px;
+    padding:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,17 @@
+/* 
+    Created on : 23-ago-2015, 20:32:31
+    Author     : Alex Pabón
+*/
+
+#RecordarClave
+{
+    width:1040px;
+    height:200px;
+    float:right;
+    background-color:#efefef;
+    color:#000000;
+    text-align:left;
+    border-radius:20px;
+    padding:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+}
