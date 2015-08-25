@@ -37,7 +37,7 @@
                                     <li><a href="#">Hogar</a></li>
                                     <li><a href="#">Otros</a></li>
                                 </ul>
-                            <li><a href="Promociones.html"><strong><em>Promociones</em></strong></a>
+                            <li><a href="#"><strong><em>Promociones</em></strong></a>
                             <li><a href="Contactenos.jsp"><strong><em>Contáctenos </em></strong></a></li>
                         </ul>
                     </nav>
@@ -60,7 +60,7 @@
                                 <label>Contraseña: </label> &nbsp;&nbsp; <input type="password" id="clave" name="clave" placeholder="Contraseña"/><br>
                                 <br>
                                 <a href="RecordarClave.jsp">¿Olvido su contraseña?</a> <br>
-                                <button type="submit"><a id="link" href="MenuAdministrador.jsp">Ingresar</a></button> <button type="submit"><a id="link" href="Clientes.jsp"> Registrarse</a></button>
+                                <button type="submit"><a id="link" href="Menus.jsp">Ingresar</a></button> <button type="submit"><a id="link" href="Clientes.jsp"> Registrarse</a></button>
                             </form>
                         </article>
                     </div>

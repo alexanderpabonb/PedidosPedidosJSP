@@ -1,6 +1,6 @@
 <%-- 
-    Document   : MenuAdministrador
-    Created on : 24-ago-2015, 18:38:59
+    Document   : MenuEmpleado
+    Created on : 25-ago-2015, 12:06:48
     Author     : Alex Pabón
 --%>
 
@@ -70,21 +70,6 @@
                                     </ul> </li>
 
                                 <li><a href="#"><strong><em>Movimientos</em></strong></a>
-                                    <ul id="menu-izqlist">
-                                        <li><a href="#">Pedidos</a></li>
-                                        <li><a href="#">Facturas</a></li>
-                                    </ul>
-                                <li><a href="Promociones.html"><strong><em>Reportes</em></strong></a>
-                                    <ul id="menu-izqlist">
-                                        <li><a href="#">Usuarios Nuevos</a></li>
-                                        <li><a href="#">Registrar Usuarios</a></li>
-                                        <li><a href="#">Clientes</a></li>
-                                        <li><a href="#">Empleados</a></li>
-                                        <li><a href="#">Proveedores</a></li>
-                                        <li><a href="#">Productos</a></li>
-                                        <li><a href="#">Insumos</a></li>
-                                    </ul> </li>
-                                    <li><a href="#"><strong><em>Reportes de Movimientos</em></strong></a>
                                     <ul id="menu-izqlist">
                                         <li><a href="#">Pedidos</a></li>
                                         <li><a href="#">Facturas</a></li>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : MenuAdministrador
-    Created on : 24-ago-2015, 18:38:59
+    Document   : MenuCliente
+    Created on : 25-ago-2015, 12:06:59
     Author     : Alex Pabón
 --%>
 
@@ -50,45 +50,21 @@
                         <div id="menu-izqbody" class="btn-group-vertical" role="group" aria-label="...">
                             <ul>
                                 <li><a href="MenuAdministrador.jsp"><strong><em>Inicio</em></strong></a></li>
-                                <li><a href="#"><strong><em>Archivo</em></strong></a>
+                                <li><a href="#"><strong><em>Facturación</em></strong></a>
                                     <ul id="menu-izqlist">
-                                        <li><a href="UsuariosNuevos.jsp">Usuarios Nuevos</a></li>
-                                        <li><a href="#">Registrar Usuarios</a></li>
-                                        <li><a href="#">Clientes</a></li>
-                                        <li><a href="Empleados.jsp">Empleados</a></li>
-                                        <li><a href="#">Proveedores</a></li>
-                                        <li><a href="#">Productos</a></li>
-                                        <li><a href="#">Insumos</a></li>
-
-                                    </ul> </li>       
-                                <li><a href="#"><strong><em>Maestro</em></strong></a>
+                                        <li><a href="#">Facturas a pagar</a></li>
+                                        <li><a href="#">Historial de facturas</a></li>
+                                    </ul></li>
+                                <li><a href="#"><strong><em>Compras</em></strong></a>
                                     <ul id="menu-izqlist">
-                                        <li><a href="#">Municipios</a></li>
-                                        <li><a href="#">Departamentos</a></li>
-                                        <li><a href="#">Marcas</a></li>
-                                        <li><a href="#">Categorias</a></li>
-                                    </ul> </li>
-
-                                <li><a href="#"><strong><em>Movimientos</em></strong></a>
-                                    <ul id="menu-izqlist">
-                                        <li><a href="#">Pedidos</a></li>
-                                        <li><a href="#">Facturas</a></li>
+                                        <li><a href="#">Favoritos</a></li>
+                                        <li><a href="#">Recientes</a></li>
                                     </ul>
-                                <li><a href="Promociones.html"><strong><em>Reportes</em></strong></a>
+                                <li><a href="#"><strong><em>Configuración</em></strong></a>
                                     <ul id="menu-izqlist">
-                                        <li><a href="#">Usuarios Nuevos</a></li>
-                                        <li><a href="#">Registrar Usuarios</a></li>
-                                        <li><a href="#">Clientes</a></li>
-                                        <li><a href="#">Empleados</a></li>
-                                        <li><a href="#">Proveedores</a></li>
-                                        <li><a href="#">Productos</a></li>
-                                        <li><a href="#">Insumos</a></li>
-                                    </ul> </li>
-                                    <li><a href="#"><strong><em>Reportes de Movimientos</em></strong></a>
-                                    <ul id="menu-izqlist">
-                                        <li><a href="#">Pedidos</a></li>
-                                        <li><a href="#">Facturas</a></li>
-                                    </ul> </li>
+                                        <li><a href="#">Datos personales</a></li>
+                                        <li><a href="#">Seguridad</a></li>
+                                    </ul>
                                 <li><a href="#"><strong><em>Ayuda </em></strong></a>
                                     <ul id="menu-izqlist">
                                         <li><a href="#">Manual de Usuario</a></li>

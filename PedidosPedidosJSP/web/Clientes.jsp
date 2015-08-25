@@ -36,7 +36,7 @@
                                     <li><a href="#">Hogar</a></li>
                                     <li><a href="#">Otros</a></li>
                                 </ul>
-                            <li><a href="Promociones.html"><strong><em>Promociones</em></strong></a>
+                            <li><a href="#"><strong><em>Promociones</em></strong></a>
                             <li><a href="Contactenos.jsp"><strong><em>Contáctenos </em></strong></a></li>
                         </ul>
                     </nav>

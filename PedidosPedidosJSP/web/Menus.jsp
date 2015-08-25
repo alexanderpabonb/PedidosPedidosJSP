@@ -1,6 +1,6 @@
 <%-- 
-    Document   : MisionVision
-    Created on : 23-ago-2015, 20:41:32
+    Document   : Menus
+    Created on : 25-ago-2015, 11:53:35
     Author     : Alex Pabón
 --%>
 
@@ -9,10 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="css/Stylesheet.css">
-        <link rel="stylesheet" type="text/css" href="css/StyleMisionVision.css">
+        <link rel="stylesheet" type="text/css" href="css/StyleMenus.css">
+        <link rel="stylesheet" type="text/css" href="css/Style-menu-izqbody.css">
         <link rel="icon" href="Imagenes/LogoIcono.ico" type="image/x.icon">
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="scripts/script-menu-izqbody.js"></script>
         <title>Pedidos más Pedidos</title>
     </head>
     <body>
@@ -42,27 +44,16 @@
                         </ul>
                     </nav>
                 </header>
-                <div id="Mision">
-                    <center><h2>Misión</h2></center>
-                    <p>El hueco es una empresa que tiene como razón social el comercio de diferentes 
-                        productos, para lo cual establece técnicas de mercadeo novedosas con la finalidad
-                        de lograr una fácil interacción entre el usuario y los productos, además de otorgar
-                        facilidades para la información, localización, agrupación y posterior comprar de los
-                        productos.</p>
-                    <p>
-                        Para ello contamos con la tecnología apropiada y un talento humano visionario, 
-                        comprometido con los valores corporativos, la preservación del medio ambiente y 
-                        la construcción de un mejor país.</p>
-                </div>
-
-                <div id="Vision">
-                    <center><h2>Visión</h2></center>
-                    <p>Seremos una comercializadora con motivación de expandir constantemente la gama de 
-                        productos, procurando que nuestro servicio se convierta en una tendencia nacional 
-                        para todos aquellas personas que deseen conseguir variedad de productos en un solo
-                        lugar, esperando que en 2020 nos convirtamos en un puntero del sector comercial, 
-                        cumpliendo con todos nuestro valores corporativos y aplicando nuestros estándares 
-                        ejecutivos.</p>
+                <div id="principal">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <center>
+                        <button type="submit" id="menus"><a id="link" href="MenuAdministrador.jsp">Menú Administrador</a></button> <br>
+                        <button type="submit" id="menus"><a id="link" href="MenuEmpleado.jsp">Menú Empleado</a></button> <br>
+                        <button type="submit" id="menus"><a id="link" href="MenuCliente.jsp">Menú Cliente</a></button>
+                    </center>                    
                 </div>
             </div>
             <div id="footer">

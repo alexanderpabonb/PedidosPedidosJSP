@@ -1,0 +1,19 @@
+/* 
+    Created on : 25-ago-2015, 12:03:03
+    Author     : Alex Pabón
+*/
+
+#menus {
+    margin:20px;
+    margin-bottom:5px;
+    width:200px;
+    height:40px;
+    outline:none;
+    border:0px;
+    background-color:#5b74a8;
+    color:white;
+    font-size:100%;
+    border-radius:5px;
+    cursor: pointer;
+    -webkit-box-shadow:0px 2px 0px #2f477a;
+}
