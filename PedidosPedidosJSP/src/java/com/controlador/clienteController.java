@@ -3,6 +3,7 @@ package com.controlador;
 import com.dao.CrudClientes;
 import com.modelo.Cliente;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.RequestDispatcher;
@@ -46,32 +47,43 @@ public class clienteController extends HttpServlet {
         if (request.getParameter("guardar") != null) {
             cliente = new Cliente();
 
+            if(request.getParameter("tipoDocumcliente") != null && request.getParameter("nombresCliente").trim().isEmpty()){
+                cliente.setNombresCliente(request.getParameter("nombresCliente"));
+            }else{
+                JOptionPane.showMessageDialog(null, "Ingrese su Tipo de Documento");
+            }
             cliente.setDocumCliente(Integer.parseInt(request.getParameter("documCliente")));
-            
             if(request.getParameter("nombresCliente") != null && request.getParameter("nombresCliente").trim().isEmpty()){
                 cliente.setNombresCliente(request.getParameter("nombresCliente"));
+            }else{
+                JOptionPane.showMessageDialog(null, "Ingrese sus Nombres");
             }
             if(request.getParameter("apellidosCliente") != null && request.getParameter("apellidosCliente").trim().isEmpty()){
                 cliente.setApellidosCliente(request.getParameter("apellidosCliente"));
+            }else{
+                JOptionPane.showMessageDialog(null, "Ingrese sus Apellidos");
             }
             if(request.getParameter("fechaNaCliente") != null && request.getParameter("fechaNaCliente").trim().isEmpty()){
-                
-                cliente.setFechaNacCliente(request.getParameter("fechaNaCliente"));
+                cliente.setFechaNacCliente(new Date(request.getParameter("fechaNaCliente")));
+            }else{
+                JOptionPane.showMessageDialog(null, "Ingrese su Fecha de Nacimiento");
             }
-            if(request.getParameter("generoCliente") != null && request.getParameter("generoCliente").trim().isEmpty()){
-                cliente.setGeneroCliente(request.getParameter("generoCliente"));
-            }
+            cliente.setGeneroCliente(request.getParameter("generoCliente"));
             if(request.getParameter("telCliente") != null && request.getParameter("telCliente").trim().isEmpty()){
                 cliente.setTelCliente(Integer.parseInt(request.getParameter("telCliente")));
+            }else{
+                JOptionPane.showMessageDialog(null, "Ingrese su Telefono");
             }
-            if(request.getParameter("celCliente") != null && request.getParameter("celCliente").trim().isEmpty()){
-                cliente.setCelCliente(Integer.parseInt(request.getParameter("celCliente")));
-            }
+            cliente.setCelCliente(Integer.parseInt(request.getParameter("celCliente")));
             if(request.getParameter("direccionCliente") != null && request.getParameter("direccionCliente").trim().isEmpty()){
                 cliente.setDireccionCliente(request.getParameter("direccionCliente"));
+            }else{
+                JOptionPane.showMessageDialog(null, "Ingrese su Direccion");
             }
             if(request.getParameter("correoCliente") != null && request.getParameter("correoCliente").trim().isEmpty()){
                 cliente.setCorreoCliente(request.getParameter("correoCliente"));
+            }else{
+                JOptionPane.showMessageDialog(null, "Ingrese su Correo");
             }
                        
             if (baseClientes.addClientes(cliente)) {
@@ -92,7 +104,7 @@ public class clienteController extends HttpServlet {
             cliente.setDocumCliente(Integer.parseInt(request.getParameter("documCliente")));
             cliente.setNombresCliente(request.getParameter("nombresCliente"));
             cliente.setApellidosCliente(request.getParameter("apellidosCliente"));
-            cliente.setFechaNacCliente(request.getParameter("fechaNaCliente"));
+            cliente.setFechaNacCliente(new Date(request.getParameter("fechaNaCliente")));
             cliente.setGeneroCliente(request.getParameter("generoCliente"));
             cliente.setTelCliente(Integer.parseInt(request.getParameter("telCliente")));
             cliente.setCelCliente(Integer.parseInt(request.getParameter("celCliente")));

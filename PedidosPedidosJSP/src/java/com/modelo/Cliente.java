@@ -7,7 +7,7 @@ import java.util.Date;
  * @author Alex Pabón
  */
 public class Cliente {
-    
+    private String tipoDocumCliente;
     private int documCliente;
     private String nombresCliente;
     private String apellidosCliente;
@@ -27,6 +27,14 @@ public class Cliente {
 
     public void setDocumCliente(int documCliente) {
         this.documCliente = documCliente;
+    }
+
+    public String getTipoDocumCliente() {
+        return tipoDocumCliente;
+    }
+
+    public void setTipoDocumCliente(String tipoDocumCliente) {
+        this.tipoDocumCliente = tipoDocumCliente;
     }
 
     public String getNombresCliente() {

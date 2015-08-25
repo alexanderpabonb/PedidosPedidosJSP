@@ -24,85 +24,97 @@ public class CrudClientes {
         conection = DBUtil.getConection();
     }
 
-    public void addClientes(Cliente addCliente) {
-        
+    public boolean addClientes(Cliente addCliente) {
+        boolean respuesta = false;
         try {
-            PreparedStatement insertarSql = conection.prepareStatement("insert into CLIENTES (documCliente, nombresCliente, "
-                    + "apellidosCliente, fechaNacCliente, generoCliente, telCliente, celCliente, direccionCliente, correoCliente)"
-                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement insertarSql = conection.prepareStatement("insert into CLIENTES (DOCUMCLIENTE, TIPODOCUMCLIENTE,"
+                    + "NOMBRESCLIENTE, APELLIDOSCLIENTE, FECHANACLIENTE, GENEROCLIENTE, TELCLIENTE, CELCLIENTE, DIRECCIONCLIENTE,"
+                    + "CORREOCLIENTE)" + " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             insertarSql.setInt(1, addCliente.getDocumCliente());
-            insertarSql.setString(2, addCliente.getNombresCliente());
-            insertarSql.setString(3, addCliente.getApellidosCliente());
-            insertarSql.setDate(4, new Date(addCliente.getFechaNacCliente().getTime()));
-            insertarSql.setString(5, addCliente.getGeneroCliente());
-            insertarSql.setInt(6, addCliente.getTelCliente());
-            insertarSql.setInt(7, addCliente.getCelCliente());
-            insertarSql.setString(8, addCliente.getDireccionCliente());
-            insertarSql.setString(9, addCliente.getCorreoCliente());
+            insertarSql.setString(2, addCliente.getTipoDocumCliente());
+            insertarSql.setString(3, addCliente.getNombresCliente());
+            insertarSql.setString(4, addCliente.getApellidosCliente());
+            insertarSql.setDate(5, new Date(addCliente.getFechaNacCliente().getTime()));
+            insertarSql.setString(6, addCliente.getGeneroCliente());
+            insertarSql.setInt(7, addCliente.getTelCliente());
+            insertarSql.setInt(8, addCliente.getCelCliente());
+            insertarSql.setString(9, addCliente.getDireccionCliente());
+            insertarSql.setString(10, addCliente.getCorreoCliente());
             insertarSql.executeUpdate();
+            respuesta = true;
             System.out.println("El cliente fue guardado");
         } catch (SQLException e) {
             e.printStackTrace();
+            respuesta = false;
             System.out.println("El cliente no fue guardado");
         }
+        return respuesta;
     }
 
-    public void updateClientes(Cliente updateCliente) {
-        
+    public boolean updateClientes(Cliente updateCliente) {
+        boolean respuesta = false;
         try {
-            PreparedStatement modificarSQL = conection.prepareStatement("update CLIENTES set documCliente=?, nombresCliente=?, apellidosCliente=?, "
-                            + "fechaNacCliente=?, generoCliente=?, telCliente=?, celCliente=?, direccionCliente=?, correoCliente=?"
-                            + " WHERE documCliente = ?");
+            PreparedStatement modificarSQL = conection.prepareStatement("update CLIENTES set DOCUMCLIENTE=?, "
+                    + "NOMBRESCLIENTE=?, APELLIDOSCLIENTE=?, FECHANACLIENTE=?, GENEROCLIENTE=?, TELCLIENTE=?, CELCLIENTE=?, "
+                    + "DIRECCIONCLIENTE=?, CORREOCLIENTE=?" + " WHERE DOCUMCLIENTE = ?");
 
             modificarSQL.setInt(1, updateCliente.getDocumCliente());
-            modificarSQL.setString(2, updateCliente.getNombresCliente());
-            modificarSQL.setString(3, updateCliente.getApellidosCliente());
-            modificarSQL.setDate(4, (Date) updateCliente.getFechaNacCliente());
-            modificarSQL.setString(5, updateCliente.getGeneroCliente());
-            modificarSQL.setInt(6, updateCliente.getTelCliente());
-            modificarSQL.setInt(7, updateCliente.getCelCliente());
-            modificarSQL.setString(8, updateCliente.getDireccionCliente());
-            modificarSQL.setString(9, updateCliente.getCorreoCliente());
+            modificarSQL.setString(2, updateCliente.getTipoDocumCliente());
+            modificarSQL.setString(3, updateCliente.getNombresCliente());
+            modificarSQL.setString(4, updateCliente.getApellidosCliente());
+            modificarSQL.setDate(5, (Date) updateCliente.getFechaNacCliente());
+            modificarSQL.setString(6, updateCliente.getGeneroCliente());
+            modificarSQL.setInt(7, updateCliente.getTelCliente());
+            modificarSQL.setInt(8, updateCliente.getCelCliente());
+            modificarSQL.setString(9, updateCliente.getDireccionCliente());
+            modificarSQL.setString(10, updateCliente.getCorreoCliente());
             modificarSQL.executeUpdate();
+            respuesta = true;
             System.out.println("El cliente fue modificado");
         } catch (SQLException e) {
             e.printStackTrace();
+            respuesta = false;
             System.out.println("El cliente no fue modificado");
         }
+        return respuesta;
     }
 
-    public void deleteRegistro(int documCliente) {
-        
+    public boolean deleteRegistro(int documCliente) {
+        boolean respuesta = false;
         try {
-            PreparedStatement eliminarCliente = conection.prepareStatement("delete from CLIENTES WHERE documCliente = ?");
+            PreparedStatement eliminarCliente = conection.prepareStatement("delete from CLIENTES WHERE DOCUMCLIENTE = ?");
             eliminarCliente.setInt(1, documCliente);
             eliminarCliente.executeUpdate();
+            respuesta = true;
             System.out.println("El cliente fue eliminado");
         } catch (SQLException e) {
             e.printStackTrace();
+            respuesta = false;
             System.out.println("El cliente no fue eliminado");
         }
+        return respuesta;
     }
 
     public Cliente consultarClientes(int documCliente) {
         Cliente cliente = null;
         try {
             PreparedStatement consultaSql = conection.
-                    prepareStatement("select * from CLIENTES where documentoCliente = ?");
+                    prepareStatement("select * from CLIENTES where DOCUMCLIENTE = ?");
             consultaSql.setInt(1, documCliente);
             ResultSet respuesta = consultaSql.executeQuery();
             if (respuesta.next()) {
                 cliente = new Cliente();
-                cliente.setDocumCliente(respuesta.getInt("documCliente"));
-                cliente.setNombresCliente(respuesta.getString("nombresCliente"));
-                cliente.setApellidosCliente(respuesta.getString("apellidosCliente"));
-                cliente.setFechaNacCliente(respuesta.getDate("fechaNacCliente"));
-                cliente.setGeneroCliente(respuesta.getString("generoCliente"));
-                cliente.setTelCliente(respuesta.getInt("telCliente"));
-                cliente.setCelCliente(respuesta.getInt("celCliente"));
-                cliente.setDireccionCliente(respuesta.getString("direccionCliente"));
-                cliente.setCorreoCliente(respuesta.getString("correoCliente"));
+                cliente.setTipoDocumCliente(respuesta.getString("TIPODOCUMCLIENTE"));
+                cliente.setDocumCliente(respuesta.getInt("DOCUMCLIENTE"));
+                cliente.setNombresCliente(respuesta.getString("NOMBRESCLIENTE"));
+                cliente.setApellidosCliente(respuesta.getString("APELLIDOSCLIENTE"));
+                cliente.setFechaNacCliente(respuesta.getDate("FECHANACLIENTE"));
+                cliente.setGeneroCliente(respuesta.getString("GENEROCLIENTE"));
+                cliente.setTelCliente(respuesta.getInt("TELCLIENTE"));
+                cliente.setCelCliente(respuesta.getInt("CELCLIENTE"));
+                cliente.setDireccionCliente(respuesta.getString("DIRECCIONCLIENTE"));
+                cliente.setCorreoCliente(respuesta.getString("CORREOCLIENTE"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -114,12 +126,12 @@ public class CrudClientes {
         boolean res = false;
         DBUtil conexion = new DBUtil();
         Connection connection = conexion.getConection();
-        String consulta = "SELECT id FROM CLIENTES WHERE documCliente = " + id;
+        String consulta = "SELECT id FROM CLIENTES WHERE DOCUMCLIENTE = " + id;
         try {
             Statement consultaEstudiante = connection.createStatement();
             ResultSet respuesta = consultaEstudiante.executeQuery(consulta);
             if (respuesta.next()) {
-                if (respuesta.getInt("documCliente") == id) {
+                if (respuesta.getInt("DOCUMCLIENTE") == id) {
                     res = true;
                 }
 
@@ -140,15 +152,16 @@ public class CrudClientes {
             ResultSet respuesta = statement.executeQuery("select * from CLIENTES");
             while (respuesta.next()) {
                 Cliente cliente = new Cliente();
-                cliente.setDocumCliente(respuesta.getInt("documCliente"));
-                cliente.setNombresCliente(respuesta.getString("nombresCliente"));
-                cliente.setApellidosCliente(respuesta.getString("apellidosCliente"));
-                cliente.setFechaNacCliente(respuesta.getDate("fechaNacCliente"));
-                cliente.setGeneroCliente(respuesta.getString("generoCliente"));
-                cliente.setTelCliente(respuesta.getInt("telCliente"));
-                cliente.setCelCliente(respuesta.getInt("celCliente"));
-                cliente.setDireccionCliente(respuesta.getString("direccionCliente"));
-                cliente.setCorreoCliente(respuesta.getString("correoCliente"));
+                cliente.setDocumCliente(respuesta.getInt("DOCUMCLIENTE"));
+                cliente.setTipoDocumCliente(respuesta.getString("TIPODOCUMCLIENTE"));
+                cliente.setNombresCliente(respuesta.getString("NOMBRESCLIENTE"));
+                cliente.setApellidosCliente(respuesta.getString("APELLIDOSCLIENTE"));
+                cliente.setFechaNacCliente(respuesta.getDate("FECHANACLIENTE"));
+                cliente.setGeneroCliente(respuesta.getString("GENEROCLIENTE"));
+                cliente.setTelCliente(respuesta.getInt("TELCLIENTE"));
+                cliente.setCelCliente(respuesta.getInt("CELCLIENTE"));
+                cliente.setDireccionCliente(respuesta.getString("DIRECCIONCLIENTE"));
+                cliente.setCorreoCliente(respuesta.getString("CORREOCLIENTE"));
                 listaCliente.add(cliente);
             }
         } catch (SQLException e) {

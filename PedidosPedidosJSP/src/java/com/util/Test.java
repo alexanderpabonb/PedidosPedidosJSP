@@ -1,6 +1,5 @@
 package com.util;
 
-import com.controlador.clienteController;
 import com.dao.CrudClientes;
 import com.modelo.Cliente;
 import java.sql.Connection;
@@ -19,9 +18,10 @@ public class Test {
 		CrudClientes crudCliente = new CrudClientes();
 		Cliente cliente = new Cliente();
 		cliente.setDocumCliente(7);
+                cliente.setTipoDocumCliente("CC");
 		cliente.setNombresCliente("Alex");
 		cliente.setApellidosCliente("Pabon");
-		cliente.setFechaNacCliente(new Date());
+		cliente.setFechaNacCliente(new Date(07/07/1995));
 		cliente.setGeneroCliente("Masculino");
 		cliente.setTelCliente(2692870);
                 cliente.setCelCliente(3040);
@@ -29,10 +29,10 @@ public class Test {
                 cliente.setCorreoCliente("alexpabonbedoya@gmail.com");
                 crudCliente.addClientes(cliente);
                 
-                crudCliente.deleteRegistro(1);
+                crudCliente.deleteRegistro(2);
                 
 		Cliente clien = null;
-                clien = crudCliente.consultarClientes(1);
+                clien = crudCliente.consultarClientes(7);
                 if (clien != null){
                     System.out.println("El Cliente " + clien.getNombresCliente()+ " " + clien.getApellidosCliente());
                 }else{

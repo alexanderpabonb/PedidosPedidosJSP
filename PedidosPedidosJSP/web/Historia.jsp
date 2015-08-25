@@ -42,7 +42,7 @@
                     </nav>
                 </header>
                 <div id="Historia">
-                    <h2>Historia</h2>
+                    <center><h2>Historia</h2></center>
                     <p>Pedidos más pedidos se funda en 2014 bajo la necesidad de crear una nueva 
                         sociedad con capacidad de responderle a sus clientes en términos de eficiencia y 
                         eficacia en términos de compra de productos, pues, tres jóvenes emprendedores 

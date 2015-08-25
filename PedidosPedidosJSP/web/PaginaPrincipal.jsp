@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="css/Stylesheet.css">
         <link rel="stylesheet" type="text/css" href="css/StylePaginaPrincipal.css">
         <link rel="icon" href="Imagenes/LogoIcono.ico" type="image/x.icon">
@@ -59,7 +60,7 @@
                                 <label>Contraseña: </label> &nbsp;&nbsp; <input type="password" id="clave" name="clave" placeholder="Contraseña"/><br>
                                 <br>
                                 <a href="RecordarClave.jsp">¿Olvido su contraseña?</a> <br>
-                                <button type="submit"><a id="link" href="MenuPrincipal.html">Ingresar</a></button> <button type="submit"><a id="link" href="Clientes.jsp"> Registrarse</a></button>
+                                <button type="submit"><a id="link" href="MenuAdministrador.jsp">Ingresar</a></button> <button type="submit"><a id="link" href="Clientes.jsp"> Registrarse</a></button>
                             </form>
                         </article>
                     </div>

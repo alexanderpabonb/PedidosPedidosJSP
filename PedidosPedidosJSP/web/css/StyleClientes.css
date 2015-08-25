@@ -18,7 +18,7 @@
 
 #Cliente
 {
-    width:800px;
+    width:1040px;
     height:380px;
     float:right;
     background-color:#efefef;
@@ -30,7 +30,7 @@
 }
 
 #separador {
-	width: 800px;
+	width: 1040px;
 	position: relative;
 	border: 1px groove black;
 	padding: 0px;

@@ -1,0 +1,109 @@
+/* 
+    Created on : 24-ago-2015, 20:51:56
+    Author     : Alex Pabón
+*/
+
+#menuprin{
+    width: 220px;
+    height: 400px;
+    float:left;
+    margin-top: -5px;
+    margin-left: -5px;
+    background-color: #4c4e53;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+}
+
+/* Menu izquierdo */
+#menu-izqbody
+#menu-izqbody ul,
+#menu-izqbody li,
+#menu-izqbody a {
+    list-style: none;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    position: relative;
+}
+#menu-izqbody a {
+    line-height: 1.3;
+    padding: 5px 20px;
+}
+#menu-izqbody {
+    width: 250px;
+    margin-left: -35px;
+    margin-top: -5px;
+}
+#menu-izqbody > ul > li {
+    cursor: pointer;
+    background: #3e3d3c;
+    border-bottom: 2px solid #4c4e53;
+}
+#menu-izqbody > ul > li:last-child {
+    border-bottom: 1px solid #3e3d3c;
+}
+#menu-izqbody > ul > li > a {
+    font-size: 13px;
+    display: block;
+    color: #ffffff;
+    text-shadow: 0 1px 1px #000;
+    background: #64676e;
+    background: -moz-linear-gradient(#64676e 0%, #4c4e53 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #64676e), color-stop(100%, #4c4e53));
+    background: -webkit-linear-gradient(#64676e 0%, #4c4e53 100%);
+    background: linear-gradient(#64676e 0%, #4c4e53 100%);
+}
+#menu-izqbody > ul > li > a:hover {
+    text-decoration: none;
+}
+#menu-izqbody > ul > li.active {
+    border-bottom: none;
+}
+#menu-izqbody > ul > li.active > a {
+    background: #2f477a;
+    background: -moz-linear-gradient(#2f477a 0%, #2f477a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2f477a), color-stop(100%, #2f477a));
+    background: -webkit-linear-gradient(#2f477a 0%, #2f477a 100%);
+    background: linear-gradient(#2f477a 0%, #2f477a 100%);
+    color: white;
+    text-shadow: 0 1px 1px #2f477a;
+}
+#menu-izqbody > ul > li.has-sub > a:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border: 5px solid transparent;
+    border-left: 5px solid #ffffff;
+}
+#menu-izqbody > ul > li.has-sub.active > a:after {
+    right: 14px;
+    top: 12px;
+    border: 5px solid transparent;
+    border-top: 5px solid #4e5800;
+}
+/* Sub menu */
+#menu-izqbody ul ul {
+    padding: 0;
+    display: none;
+}
+#menu-izqbody ul ul a {
+    background: #efefef;
+    display: block;
+    color: #797979;
+    font-size: 13px;
+}
+#menu-izqbody ul ul li {
+    border-bottom: 1px solid #c9c9c9;
+}
+#menu-izqbody ul ul li.odd a {
+    background: #e5e5e5;
+}
+#menu-izqbody ul ul li:last-child {
+    border: none;
+}
