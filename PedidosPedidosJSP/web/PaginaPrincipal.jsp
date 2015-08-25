@@ -12,7 +12,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="css/Stylesheet.css">
         <link rel="stylesheet" type="text/css" href="css/StylePaginaPrincipal.css">
+        <link rel="stylesheet" type="text/css" href="css/StyleSlider.css">
         <link rel="icon" href="Imagenes/LogoIcono.ico" type="image/x.icon">
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js' type='text/javascript'/>
+        <script></script>
         <title>Pedidos más Pedidos</title>
     </head>
     <body>
@@ -44,11 +47,37 @@
                 </header>
                 <section>
                     <div id="TextoPrincipal">
-                        <article>
-                            <center><h1>Noticias</h1></center>
-                            <p> 12/3/15: Se añaden nueva coleccion de zapatos para dama.</p>
-                            <p> 17/3/15: nuevos bolsos de totto en inventario!</p>			
-                        </article>
+                        
+                        <script>
+                                $(function(){
+                                    $('#slider a:gt(0)').hide();
+                                    var interval = setInterval(changeDiv, 3000);
+                                    function changeDiv(){
+                                        $('#slider a:first-child').fadeOut(1000).next('a').fadeIn(1000).end().appendTo('#slider');
+                                    };
+                                    $('.mas').click(function(){
+                                        changeDiv();
+                                        clearInterval(interval);
+                                        interval = setInterval(changeDiv, 3000);
+                                    });
+                                    $('.menos').click(function(){
+                                        $('#slider a:first-child').fadeOut(1000);
+                                        $('#slider a:last-child').fadeIn(1000).prependTo('#slider');
+                                        clearInterval(interval);
+                                        interval = setInterval(changeDiv, 3000);
+                                    });
+                                });
+                            </script>
+                            
+                        <div id="slider-wrapper">
+                            <div id="slider">
+                                <a href="URL_ENLACE1" id="imag"><img src="Imagenes/almacen1.jpg"/></a>
+                                <a href="URL_ENLACE2" id="imag"><img src="Imagenes/almacen2.jpg"/></a>
+                                <a href="URL_ENLACE3" id="imag"><img src="Imagenes/almacen3.jpg"/></a>
+                            </div>
+                            <a href="javascript:void();" class="mas">&rsaquo;</a>
+                            <a href="javascript:void();" class="menos">&lsaquo;</a>
+                        </div>                        
                     </div>
                     <div id="InicioSesion">
                         <article>
